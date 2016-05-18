@@ -19,13 +19,13 @@
  > #### 2、进入到你的workspace，执行以下命令下载项目，并且你需要给你的开发工具安装lombok插件，强烈建议使用idea作为你的开发工具。
  > 
  > ```
- > git clone git@github.com:iCodingStar/
+ > git clone git@github.com:iCodingStar/Laboratory-devices-management-system
  > ```
  > 
  > #### 3、进入到clone好的everyone-java-blog目录里，执行以下命令，将你的副本地址加入到你的远端仓库中。
  > 
  > ```
- > git remote add remote [你fork的地址，比如：git@github.com:your_username/everyone-java-blog.git]
+ > git remote add remote [你fork的地址，比如：git@github.com:iCodingStar/Laboratory-devices-management-system]
  > ```
  > 
  > #### 4、进行你想要进行的任何代码修改。
@@ -87,7 +87,7 @@
  * limitations under the License.
  */
 
-package com.zuoxiaolong.blog.open.api.controller;
+package cn.codingstar.controller;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -97,7 +97,7 @@ import java.util.Date;
 /**
  * 该类代表一个bean对象.
  *
- * @author Xiaolong Zuo
+ * @author ShiXing
  * @since 1.0.0
  */
 
@@ -194,12 +194,12 @@ public class Bean {
  * limitations under the License.
  */
 
-package com.zuoxiaolong.blog.open.api.controller;
+package cn.codingstar.controller;
 
 /**
  * 该类封装了关于string操作的工具方法
  *
- * @author Xiaolong Zuo
+ * @author ShiXing
  * @since 1.0.0
  */
 public interface StringUtils {
@@ -242,5 +242,3 @@ public interface StringUtils {
 
 
 git commit -m "create project ldms include sub-modules(ldms-common,ldms-model,ldms-service,ldms-web,ldms-cache,ldms-admin)"
-git config --global user.email "codingstar@qq.com"
-git config user.name "codingstar"
