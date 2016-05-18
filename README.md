@@ -1,10 +1,9 @@
 # Laboratory-devices-management-system
 
+## 项目简介
 
-## 宗旨
 
-
-## 特色
+## 特色介绍
 
  > 1、
  > 
@@ -139,7 +138,7 @@ public class Bean {
     
 --%>
 <%--
-  User: Xiaolong Zuo
+  User: ShiXing
   Time: 16/5/8 18:22
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -219,24 +218,22 @@ public interface StringUtils {
 
 ## 提交代码需要注意的问题
 
-##### 下面是本人在review pull request时发现的一些问题，请贡献代码的同学务必记得，要避免以下问题出现。
-
  * 请严格按照以上代码规范检查自己提交的代码
  * 避免提交不该提交的代码，例如构建生成的文件。
  * 类当中切勿带有main函数，如果需要测试，放到test下使用junit进行测试
  * 一定类型的类放在一定的包下，具体的规则如下
 
- > 数据库model：放在blog-model下的com.zuoxiaolong.blog.model.persistent包内
+ > 数据库model：放在blog-model下的cn.cug.laboratory.model.persistent包内
 
- > 传给前端的值对象：放在blog-model下的com.zuoxiaolong.blog.model.dto包内
+ > 传给前端的值对象：放在blog-model下的cn.cug.laboratory.model.dto包内
 
- > 数据库的DAO类：放在blog-dao下的com.zuoxiaolong.blog.mapper包内
+ > 数据库的DAO类：放在blog-dao下的cn.cug.laboratory.mapper包内
 
- > 业务逻辑service：接口放在blog-service下的com.zuoxiaolong.blog.service包内，实现类放在com.zuoxiaolong.blog.service.impl包内
+ > 业务逻辑service：接口放在blog-service下的cn.cug.laboratory.service包内，实现类放在cn.cug.laboratory.service.impl包内
 
- > 工具类：放在blog-common下的com.zuoxiaolong.blog.common.utils包内
+ > 工具类：放在blog-common下的cn.cug.laboratory.common.utils包内
 
- > web框架通用的类：放在blog-common的com.zuoxiaolong.blog.common.web包内
+ > web框架通用的类：放在blog-common的cn.cug.laboratory.common.web包内
 
  > blog-{module}下的controller：放在blog-{module}下的com.zuoxiaolong.blog.{module}.controller包内，其中module为admin、api、cache、web其中一个
 
