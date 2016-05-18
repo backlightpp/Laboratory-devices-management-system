@@ -1,4 +1,4 @@
-# everyone-java-blog
+# Laboratory-devices-management-system
 
 
 ## 宗旨
