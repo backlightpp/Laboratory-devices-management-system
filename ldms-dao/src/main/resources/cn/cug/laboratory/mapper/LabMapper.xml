@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.cug.laboratory.mapper.LabMapper">
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.persistent.Lab">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="size" jdbcType="INTEGER" property="size" />
+    <result column="open_way" jdbcType="CHAR" property="openWay" />
+    <result column="manager" jdbcType="CHAR" property="manager" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.cug.laboratory.persistent.Lab">
+    <result column="use_way" jdbcType="LONGVARCHAR" property="useWay" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, size, open_way, manager
+  </sql>
+  <sql id="Blob_Column_List">
+    use_way
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lab
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from lab
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.cug.laboratory.persistent.Lab">
+    insert into lab (id, name, size, 
+      open_way, manager, use_way
+      )
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{size,jdbcType=INTEGER}, 
+      #{openWay,jdbcType=CHAR}, #{manager,jdbcType=CHAR}, #{useWay,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.persistent.Lab">
+    insert into lab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="size != null">
+        size,
+      </if>
+      <if test="openWay != null">
+        open_way,
+      </if>
+      <if test="manager != null">
+        manager,
+      </if>
+      <if test="useWay != null">
+        use_way,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        #{size,jdbcType=INTEGER},
+      </if>
+      <if test="openWay != null">
+        #{openWay,jdbcType=CHAR},
+      </if>
+      <if test="manager != null">
+        #{manager,jdbcType=CHAR},
+      </if>
+      <if test="useWay != null">
+        #{useWay,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        size = #{size,jdbcType=INTEGER},
+      </if>
+      <if test="openWay != null">
+        open_way = #{openWay,jdbcType=CHAR},
+      </if>
+      <if test="manager != null">
+        manager = #{manager,jdbcType=CHAR},
+      </if>
+      <if test="useWay != null">
+        use_way = #{useWay,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    set name = #{name,jdbcType=VARCHAR},
+      size = #{size,jdbcType=INTEGER},
+      open_way = #{openWay,jdbcType=CHAR},
+      manager = #{manager,jdbcType=CHAR},
+      use_way = #{useWay,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    set name = #{name,jdbcType=VARCHAR},
+      size = #{size,jdbcType=INTEGER},
+      open_way = #{openWay,jdbcType=CHAR},
+      manager = #{manager,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.persistent.Lab">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="size" jdbcType="INTEGER" property="size" />
+    <result column="open_way" jdbcType="CHAR" property="openWay" />
+    <result column="manager" jdbcType="CHAR" property="manager" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.cug.laboratory.persistent.Lab">
+    <result column="use_way" jdbcType="LONGVARCHAR" property="useWay" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, size, open_way, manager
+  </sql>
+  <sql id="Blob_Column_List">
+    use_way
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lab
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from lab
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.cug.laboratory.persistent.Lab">
+    insert into lab (id, name, size, 
+      open_way, manager, use_way
+      )
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{size,jdbcType=INTEGER}, 
+      #{openWay,jdbcType=CHAR}, #{manager,jdbcType=CHAR}, #{useWay,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.persistent.Lab">
+    insert into lab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="size != null">
+        size,
+      </if>
+      <if test="openWay != null">
+        open_way,
+      </if>
+      <if test="manager != null">
+        manager,
+      </if>
+      <if test="useWay != null">
+        use_way,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        #{size,jdbcType=INTEGER},
+      </if>
+      <if test="openWay != null">
+        #{openWay,jdbcType=CHAR},
+      </if>
+      <if test="manager != null">
+        #{manager,jdbcType=CHAR},
+      </if>
+      <if test="useWay != null">
+        #{useWay,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        size = #{size,jdbcType=INTEGER},
+      </if>
+      <if test="openWay != null">
+        open_way = #{openWay,jdbcType=CHAR},
+      </if>
+      <if test="manager != null">
+        manager = #{manager,jdbcType=CHAR},
+      </if>
+      <if test="useWay != null">
+        use_way = #{useWay,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    set name = #{name,jdbcType=VARCHAR},
+      size = #{size,jdbcType=INTEGER},
+      open_way = #{openWay,jdbcType=CHAR},
+      manager = #{manager,jdbcType=CHAR},
+      use_way = #{useWay,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    set name = #{name,jdbcType=VARCHAR},
+      size = #{size,jdbcType=INTEGER},
+      open_way = #{openWay,jdbcType=CHAR},
+      manager = #{manager,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.persistent.Lab">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="size" jdbcType="INTEGER" property="size" />
+    <result column="open_way" jdbcType="CHAR" property="openWay" />
+    <result column="manager" jdbcType="CHAR" property="manager" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.cug.laboratory.persistent.Lab">
+    <result column="use_way" jdbcType="LONGVARCHAR" property="useWay" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, size, open_way, manager
+  </sql>
+  <sql id="Blob_Column_List">
+    use_way
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lab
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from lab
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.cug.laboratory.persistent.Lab">
+    insert into lab (id, name, size, 
+      open_way, manager, use_way
+      )
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{size,jdbcType=INTEGER}, 
+      #{openWay,jdbcType=CHAR}, #{manager,jdbcType=CHAR}, #{useWay,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.persistent.Lab">
+    insert into lab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="size != null">
+        size,
+      </if>
+      <if test="openWay != null">
+        open_way,
+      </if>
+      <if test="manager != null">
+        manager,
+      </if>
+      <if test="useWay != null">
+        use_way,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        #{size,jdbcType=INTEGER},
+      </if>
+      <if test="openWay != null">
+        #{openWay,jdbcType=CHAR},
+      </if>
+      <if test="manager != null">
+        #{manager,jdbcType=CHAR},
+      </if>
+      <if test="useWay != null">
+        #{useWay,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="size != null">
+        size = #{size,jdbcType=INTEGER},
+      </if>
+      <if test="openWay != null">
+        open_way = #{openWay,jdbcType=CHAR},
+      </if>
+      <if test="manager != null">
+        manager = #{manager,jdbcType=CHAR},
+      </if>
+      <if test="useWay != null">
+        use_way = #{useWay,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    set name = #{name,jdbcType=VARCHAR},
+      size = #{size,jdbcType=INTEGER},
+      open_way = #{openWay,jdbcType=CHAR},
+      manager = #{manager,jdbcType=CHAR},
+      use_way = #{useWay,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.persistent.Lab">
+    update lab
+    set name = #{name,jdbcType=VARCHAR},
+      size = #{size,jdbcType=INTEGER},
+      open_way = #{openWay,jdbcType=CHAR},
+      manager = #{manager,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
