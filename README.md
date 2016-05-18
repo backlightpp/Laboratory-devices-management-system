@@ -235,7 +235,7 @@ public interface StringUtils {
 
  > web框架通用的类：放在blog-common的cn.cug.laboratory.common.web包内
 
- > blog-{module}下的controller：放在blog-{module}下的com.zuoxiaolong.blog.{module}.controller包内，其中module为admin、api、cache、web其中一个
+ > blog-{module}下的controller：放在blog-{module}下的cn.cug.laboratory.{module}.controller包内，其中module为admin、api、cache、web其中一个
 
 
 git commit -m "create project ldms include sub-modules(ldms-common,ldms-model,ldms-service,ldms-web,ldms-cache,ldms-admin)"
