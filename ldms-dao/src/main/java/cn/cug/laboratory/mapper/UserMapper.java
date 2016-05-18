@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.persistent.User;
+import cn.cug.laboratory.wrapper.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(String username);

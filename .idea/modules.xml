@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Laboratory-devices-management-system.iml" filepath="$PROJECT_DIR$/Laboratory-devices-management-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-admin/ldms-admin.iml" filepath="$PROJECT_DIR$/ldms-admin/ldms-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-cache/ldms-cache.iml" filepath="$PROJECT_DIR$/ldms-cache/ldms-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-common/ldms-common.iml" filepath="$PROJECT_DIR$/ldms-common/ldms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-dao/ldms-dao.iml" filepath="$PROJECT_DIR$/ldms-dao/ldms-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-model/ldms-model.iml" filepath="$PROJECT_DIR$/ldms-model/ldms-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-service/ldms-service.iml" filepath="$PROJECT_DIR$/ldms-service/ldms-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldms-web/ldms-web.iml" filepath="$PROJECT_DIR$/ldms-web/ldms-web.iml" />
+    </modules>
+  </component>
+</project>

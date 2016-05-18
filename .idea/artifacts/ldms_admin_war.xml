@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ldms-admin:war">
+    <output-path>$PROJECT_DIR$/ldms-admin/target</output-path>
+    <root id="archive" name="ldms-admin.war">
+      <element id="artifact" artifact-name="ldms-admin:war exploded" />
+    </root>
+  </artifact>
+</component>

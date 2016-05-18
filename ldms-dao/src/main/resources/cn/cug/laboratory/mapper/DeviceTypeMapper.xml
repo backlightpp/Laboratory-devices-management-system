@@ -1,164 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.cug.laboratory.mapper.DeviceTypeMapper">
-  <resultMap id="BaseResultMap" type="cn.cug.laboratory.persistent.DeviceType">
-    <id column="id" jdbcType="CHAR" property="id" />
-    <result column="name" jdbcType="CHAR" property="name" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cug.laboratory.mapper.DeviceTypeMapper" >
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.wrapper.DeviceType" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="CHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, name
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from device_type
     where id = #{id,jdbcType=CHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from device_type
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.cug.laboratory.persistent.DeviceType">
+  <insert id="insert" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
     insert into device_type (id, name)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.cug.laboratory.persistent.DeviceType">
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
     insert into device_type
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="name != null">
+      <if test="name != null" >
         name,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=CHAR},
       </if>
-      <if test="name != null">
+      <if test="name != null" >
         #{name,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.persistent.DeviceType">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
     update device_type
-    <set>
-      <if test="name != null">
+    <set >
+      <if test="name != null" >
         name = #{name,jdbcType=CHAR},
       </if>
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    update device_type
-    set name = #{name,jdbcType=CHAR}
-    where id = #{id,jdbcType=CHAR}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.cug.laboratory.persistent.DeviceType">
-    <id column="id" jdbcType="CHAR" property="id" />
-    <result column="name" jdbcType="CHAR" property="name" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, name
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from device_type
-    where id = #{id,jdbcType=CHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from device_type
-    where id = #{id,jdbcType=CHAR}
-  </delete>
-  <insert id="insert" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    insert into device_type (id, name)
-    values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    insert into device_type
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=CHAR},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=CHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    update device_type
-    <set>
-      <if test="name != null">
-        name = #{name,jdbcType=CHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=CHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    update device_type
-    set name = #{name,jdbcType=CHAR}
-    where id = #{id,jdbcType=CHAR}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.cug.laboratory.persistent.DeviceType">
-    <id column="id" jdbcType="CHAR" property="id" />
-    <result column="name" jdbcType="CHAR" property="name" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, name
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from device_type
-    where id = #{id,jdbcType=CHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from device_type
-    where id = #{id,jdbcType=CHAR}
-  </delete>
-  <insert id="insert" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    insert into device_type (id, name)
-    values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    insert into device_type
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=CHAR},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=CHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.persistent.DeviceType">
-    update device_type
-    <set>
-      <if test="name != null">
-        name = #{name,jdbcType=CHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=CHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.persistent.DeviceType">
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
     update device_type
     set name = #{name,jdbcType=CHAR}
     where id = #{id,jdbcType=CHAR}
