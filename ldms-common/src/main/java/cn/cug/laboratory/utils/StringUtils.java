@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.cug.laboratory.utils.impl;
+package cn.cug.laboratory.utils;
 
 /**
  * @autor shixing
  * @since 1.0.0
  */
 
-public class StringUtils {
-
+public interface StringUtils {
     /**
      * 判断一个字符串是否为空
      *

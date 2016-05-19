@@ -118,7 +118,7 @@ create table student
    id                   varchar(11) not null,
    name                 varchar(20) not null,
    major                varchar(50) not null,
-   class                char(6) not null,
+   class_id INT(6) NOT NULL,
    academy              varchar(50) not null,
    sex                  char(4) not null,
    primary key (id)
