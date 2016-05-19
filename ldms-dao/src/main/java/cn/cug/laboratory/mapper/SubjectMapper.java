@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.wrapper.Subject;
+import cn.cug.laboratory.model.persistent.Subject;
 
 public interface SubjectMapper {
     int deleteByPrimaryKey(String id);

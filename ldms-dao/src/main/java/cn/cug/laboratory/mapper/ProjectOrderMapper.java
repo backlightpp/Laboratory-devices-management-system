@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.wrapper.ProjectOrder;
+import cn.cug.laboratory.model.persistent.ProjectOrder;
 
 public interface ProjectOrderMapper {
     int deleteByPrimaryKey(String id);

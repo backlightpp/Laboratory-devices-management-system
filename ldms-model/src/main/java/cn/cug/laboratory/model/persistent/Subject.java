@@ -1,6 +1,6 @@
-package cn.cug.laboratory.persistent;
+package cn.cug.laboratory.model.persistent;
 
-public class DeviceType {
+public class Subject {
     private String id;
 
     private String name;

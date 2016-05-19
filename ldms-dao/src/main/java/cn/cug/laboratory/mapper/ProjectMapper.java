@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.wrapper.Project;
+import cn.cug.laboratory.model.persistent.Project;
 
 public interface ProjectMapper {
     int deleteByPrimaryKey(String id);

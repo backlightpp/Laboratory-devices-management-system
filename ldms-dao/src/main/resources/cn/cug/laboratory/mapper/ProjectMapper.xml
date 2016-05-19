@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.cug.laboratory.mapper.ProjectMapper" >
-  <resultMap id="BaseResultMap" type="cn.cug.laboratory.wrapper.Project" >
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.model.persistent.Project" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="lab_id" property="labId" jdbcType="CHAR" />
     <result column="tea_id" property="teaId" jdbcType="CHAR" />
@@ -16,7 +16,7 @@
     <result column="devices" property="devices" jdbcType="VARCHAR" />
     <result column="files" property="files" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="cn.cug.laboratory.wrapper.Project" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="cn.cug.laboratory.model.persistent.Project" extends="BaseResultMap" >
     <result column="description" property="description" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -38,7 +38,7 @@
     delete from project
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="cn.cug.laboratory.wrapper.Project" >
+  <insert id="insert" parameterType="cn.cug.laboratory.model.persistent.Project" >
     insert into project (id, lab_id, tea_id, name, 
       start_time, end_time, capacity, 
       state, credit, submit_time, 
@@ -50,7 +50,7 @@
       #{passTime,jdbcType=TIMESTAMP}, #{devices,jdbcType=VARCHAR}, #{files,jdbcType=VARCHAR}, 
       #{description,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.cug.laboratory.wrapper.Project" >
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.model.persistent.Project" >
     insert into project
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -141,7 +141,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.wrapper.Project" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.model.persistent.Project" >
     update project
     <set >
       <if test="labId != null" >
@@ -186,7 +186,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.cug.laboratory.wrapper.Project" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.cug.laboratory.model.persistent.Project" >
     update project
     set lab_id = #{labId,jdbcType=CHAR},
       tea_id = #{teaId,jdbcType=CHAR},
@@ -203,7 +203,7 @@
       description = #{description,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.wrapper.Project" >
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.model.persistent.Project" >
     update project
     set lab_id = #{labId,jdbcType=CHAR},
       tea_id = #{teaId,jdbcType=CHAR},

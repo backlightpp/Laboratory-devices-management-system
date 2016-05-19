@@ -1,17 +1,15 @@
-package cn.cug.laboratory.persistent;
+package cn.cug.laboratory.model.persistent;
 
-public class Student {
+public class Teacher {
     private String id;
 
     private String name;
 
+    private String sex;
+
     private String major;
 
-    private Integer classId;
-
     private String academy;
-
-    private String sex;
 
     public String getId() {
         return id;
@@ -29,6 +27,14 @@ public class Student {
         this.name = name == null ? null : name.trim();
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
     public String getMajor() {
         return major;
     }
@@ -37,27 +43,11 @@ public class Student {
         this.major = major == null ? null : major.trim();
     }
 
-    public Integer getClassId() {
-        return classId;
-    }
-
-    public void setClassId(Integer classId) {
-        this.classId = classId;
-    }
-
     public String getAcademy() {
         return academy;
     }
 
     public void setAcademy(String academy) {
         this.academy = academy == null ? null : academy.trim();
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
     }
 }

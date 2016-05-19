@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.cug.laboratory.mapper.DeviceTypeMapper" >
-  <resultMap id="BaseResultMap" type="cn.cug.laboratory.wrapper.DeviceType" >
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.model.persistent.DeviceType" >
     <id column="id" property="id" jdbcType="CHAR" />
     <result column="name" property="name" jdbcType="CHAR" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from device_type
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
+  <insert id="insert" parameterType="cn.cug.laboratory.model.persistent.DeviceType" >
     insert into device_type (id, name)
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.model.persistent.DeviceType" >
     insert into device_type
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.model.persistent.DeviceType" >
     update device_type
     <set >
       <if test="name != null" >
@@ -50,7 +50,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.wrapper.DeviceType" >
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.model.persistent.DeviceType" >
     update device_type
     set name = #{name,jdbcType=CHAR}
     where id = #{id,jdbcType=CHAR}

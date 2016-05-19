@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.wrapper.Lab;
+import cn.cug.laboratory.model.persistent.Lab;
 
 public interface LabMapper {
     int deleteByPrimaryKey(String id);

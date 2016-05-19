@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.cug.laboratory.mapper.StudentMapper" >
-  <resultMap id="BaseResultMap" type="cn.cug.laboratory.wrapper.Student" >
+  <resultMap id="BaseResultMap" type="cn.cug.laboratory.model.persistent.Student" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="major" property="major" jdbcType="VARCHAR" />
@@ -22,13 +22,13 @@
     delete from student
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="cn.cug.laboratory.wrapper.Student" >
+  <insert id="insert" parameterType="cn.cug.laboratory.model.persistent.Student" >
     insert into student (id, name, major, 
       class_id, academy, sex)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{major,jdbcType=VARCHAR}, 
       #{classId,jdbcType=INTEGER}, #{academy,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.cug.laboratory.wrapper.Student" >
+  <insert id="insertSelective" parameterType="cn.cug.laboratory.model.persistent.Student" >
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -71,7 +71,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.wrapper.Student" >
+  <update id="updateByPrimaryKeySelective" parameterType="cn.cug.laboratory.model.persistent.Student" >
     update student
     <set >
       <if test="name != null" >
@@ -92,7 +92,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.wrapper.Student" >
+  <update id="updateByPrimaryKey" parameterType="cn.cug.laboratory.model.persistent.Student" >
     update student
     set name = #{name,jdbcType=VARCHAR},
       major = #{major,jdbcType=VARCHAR},

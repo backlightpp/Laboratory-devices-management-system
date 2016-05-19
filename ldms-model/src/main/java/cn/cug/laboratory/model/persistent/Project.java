@@ -1,4 +1,4 @@
-package cn.cug.laboratory.persistent;
+package cn.cug.laboratory.model.persistent;
 
 import java.util.Date;
 

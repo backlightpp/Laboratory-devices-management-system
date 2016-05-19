@@ -1,4 +1,4 @@
-package cn.cug.laboratory.persistent;
+package cn.cug.laboratory.model.persistent;
 
 public class User {
     private String username;

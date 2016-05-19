@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.wrapper.DeviceType;
+import cn.cug.laboratory.model.persistent.DeviceType;
 
 public interface DeviceTypeMapper {
     int deleteByPrimaryKey(String id);

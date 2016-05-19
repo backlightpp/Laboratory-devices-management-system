@@ -1,6 +1,6 @@
 package cn.cug.laboratory.mapper;
 
-import cn.cug.laboratory.wrapper.Teacher;
+import cn.cug.laboratory.model.persistent.Teacher;
 
 public interface TeacherMapper {
     int deleteByPrimaryKey(String id);
